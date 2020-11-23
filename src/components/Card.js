@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Content from "./Content";
 import Input from "./Input";
 
 class Card extends Component {
@@ -90,6 +91,8 @@ class Card extends Component {
             name={input.name}
           />
         ))}
+
+        <Content data={this.state} />
       </div>
     );
   }
