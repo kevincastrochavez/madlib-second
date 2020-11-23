@@ -23,14 +23,21 @@ class Card extends Component {
       nounThree: "",
       celebFour: "",
       adjectiveFive: "",
+      showContent: false,
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
   handleInputChange(event) {
     this.setState({ [event.target.name]: event.target.value });
     console.log(this.state);
+  }
+
+  handleFormSubmit(e) {
+    e.preventDefault();
+    this.setState({ showContent: !this.state.showContent });
   }
 
   render() {
@@ -81,19 +88,25 @@ class Card extends Component {
     ];
 
     return (
-      <div className="card">
-        {inputData.map((input) => (
-          <Input
-            key={input.name}
-            title={input.title}
-            value={input.state}
-            onChange={this.handleInputChange}
-            name={input.name}
-          />
-        ))}
+      <form onSubmit={this.handleFormSubmit} className="card">
+        <div className="card__inputs">
+          {inputData.map((input) => (
+            <Input
+              key={input.name}
+              title={input.title}
+              value={input.state}
+              onChange={this.handleInputChange}
+              name={input.name}
+            />
+          ))}
+        </div>
 
-        <Content data={this.state} />
-      </div>
+        <button type="submit">
+          {!this.state.showContent ? "Generate Mad Lib" : "Clear Mad Lib"}
+        </button>
+
+        {this.state.showContent ? <Content data={this.state} /> : ""}
+      </form>
     );
   }
 }
