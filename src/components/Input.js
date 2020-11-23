@@ -1,9 +1,9 @@
 import React from "react";
 
-function Input({ title }) {
+function Input({ title, state, onChange, name }) {
   return (
     <div className="input">
-      <input type="text" placeholder="Hi" />
+      <input name={name} value={state} onChange={onChange} type="text" />
       <label>{title}</label>
     </div>
   );
