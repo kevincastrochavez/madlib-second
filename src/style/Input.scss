@@ -1,0 +1,20 @@
+.input {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: [number-s] 26px [numebr-e input-s] 1fr [input-e];
+
+  &__number {
+    grid-row: 1/2;
+    grid-column: number-s/number-e;
+  }
+
+  & input {
+    grid-row: 1/2;
+    grid-column: input-s/input-e;
+  }
+
+  &__title {
+    grid-column: input-s/input-e;
+    grid-row: 2/3;
+  }
+}
