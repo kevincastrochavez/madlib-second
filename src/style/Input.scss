@@ -1,14 +1,23 @@
+.gray {
+  background-color: gray;
+}
+
+.green {
+  background-color: #00cb79;
+}
+
 .input {
   font-family: "Montserrat";
   text-align: center;
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: [number-s] 26px [number-e input-s] 1fr [input-e];
+  grid-column-gap: 8px;
+  height: 47px;
 
   &__number {
     grid-row: 1/2;
     grid-column: number-s/number-e;
-    background-color: #00cb79;
     color: white;
     font-size: 20px;
     text-align: center;
@@ -24,12 +33,19 @@
     font-size: 15px;
     text-align: center;
     font-weight: 600;
+    padding: 4px 0;
+    outline-width: 0;
+    border-bottom: 1px solid #b3b3b3;
+    transition: all 0.3s ease-in-out;
+
+    &:focus {
+      border-bottom: 1px solid #00cb79;
+    }
   }
 
   &__title {
     grid-column: input-s/input-e;
     grid-row: 2/3;
-    border-top: 1px solid #b3b3b3;
     color: #b3b3b3;
     font-size: 12px;
   }
