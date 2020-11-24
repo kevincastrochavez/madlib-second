@@ -1,0 +1,46 @@
+.header {
+  align-self: center;
+  color: white;
+  font-family: "Montserrat";
+  text-align: center;
+
+  &__skew {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 110vh;
+    background-color: #444;
+    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 40%, 0 70%);
+    clip-path: polygon(0 0, 100% 0%, 100% 40%, 0 70%);
+  }
+
+  &__border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 110vh;
+    background-color: #00cb79;
+    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 40%, 0 70%);
+    clip-path: polygon(0 67%, 100% 37%, 100% 40%, 0 70%);
+  }
+
+  & h1 {
+    margin-top: -50px;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 44px;
+  }
+
+  & p {
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 19px;
+    width: 403px;
+  }
+}
